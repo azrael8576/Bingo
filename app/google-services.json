@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "586667596856",
+    "firebase_url": "https://bingo-3e7ba.firebaseio.com",
+    "project_id": "bingo-3e7ba",
+    "storage_bucket": "bingo-3e7ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586667596856:android:e8c3c8a13b29315f",
+        "android_client_info": {
+          "package_name": "com.alex.bingo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586667596856-mut732e0qistrqkf3bdcugqjlkbqvt0f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alex.bingo",
+            "certificate_hash": "46417b8f74cccbc9d0fa2e1c76c0430aa19d6f24"
+          }
+        },
+        {
+          "client_id": "586667596856-i5hsoljfib1bag72aeim6ps74gagob7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2n4Rp2qvcY4Q1nRteoh8Fe5KxVuoB238"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "586667596856-i5hsoljfib1bag72aeim6ps74gagob7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
