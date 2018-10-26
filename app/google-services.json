@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "586667596856-vls9f19fev25gc2mb7892tismhso0jd9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alex.bingo",
+            "certificate_hash": "0a42603ec5ced7ed87e5531735df0ecf600001ca"
+          }
+        },
+        {
           "client_id": "586667596856-i5hsoljfib1bag72aeim6ps74gagob7t.apps.googleusercontent.com",
           "client_type": 3
         }

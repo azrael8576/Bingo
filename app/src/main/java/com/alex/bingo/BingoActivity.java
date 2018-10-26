@@ -1,6 +1,7 @@
 package com.alex.bingo;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -50,10 +51,10 @@ public class BingoActivity extends AppCompatActivity {
             long status = (long) dataSnapshot.getValue();
             switch ((int) status){
                 case Room.STATUS_CREATED:
-                    info.setText("等待對手加入");
+                    info.setText(getString(R.string.waiting_player));
                     break;
                 case Room.STATUS_JOINED:
-                    info.setText("YA!對手加入");
+                    info.setText(getString(R.string.opponent_join));
                     setMyTurn(isCreator() ? true : false);
                     FirebaseDatabase.getInstance().getReference("rooms")
                             .child(roomId)
@@ -69,9 +70,9 @@ public class BingoActivity extends AppCompatActivity {
                 case Room.STATUS_CREATOR_BINGO:
                     if (!isCreator()){
                         new AlertDialog.Builder(BingoActivity.this)
-                                .setTitle("輸家")
-                                .setMessage("對方賓果了")
-                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                .setTitle(R.string.loser)
+                                .setMessage(R.string.you_lose)
+                                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         //TODO: clean room
@@ -83,9 +84,9 @@ public class BingoActivity extends AppCompatActivity {
                 case Room.STATUS_JOINERS_BINGO:
                     if (isCreator()){
                         new AlertDialog.Builder(BingoActivity.this)
-                                .setTitle("輸家")
-                                .setMessage("對方賓果了")
-                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                .setTitle(R.string.loser)
+                                .setMessage(R.string.you_lose)
+                                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         //TODO: clean room
@@ -213,9 +214,9 @@ public class BingoActivity extends AppCompatActivity {
                                     .child("status")
                                     .setValue(isCreator() ? Room.STATUS_CREATOR_BINGO : Room.STATUS_JOINERS_BINGO);
                             new AlertDialog.Builder(BingoActivity.this)
-                                    .setTitle("賓果")
-                                    .setMessage("恭喜！你賓果了")
-                                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    .setTitle(R.string.bingo)
+                                    .setMessage(R.string.bingo_info)
+                                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             //TODO: clean room
@@ -251,6 +252,16 @@ public class BingoActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
+        FirebaseDatabase.getInstance().getReference("rooms")
+                .child(roomId)
+                .child("status")
+                .removeEventListener(statusListener);
+        if (isCreator()){
+            FirebaseDatabase.getInstance().getReference("rooms")
+                    .child(roomId)
+                    .removeValue();
+        }
+        finish();
     }
 
     class NumberHolder extends RecyclerView.ViewHolder{
@@ -299,7 +310,7 @@ public class BingoActivity extends AppCompatActivity {
 
     public void setMyTurn(boolean myTurn) {
         this.myTurn = myTurn;
-        info.setText(myTurn ? "請選號" : "等待對手選號");
+        info.setText(myTurn ? getString(R.string.select_number) : getString(R.string.waitting_opponent));
     }
 
 }

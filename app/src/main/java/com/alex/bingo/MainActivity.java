@@ -73,10 +73,10 @@ public class MainActivity extends AppCompatActivity implements FirebaseAuth.Auth
                 final EditText roomEdit = new EditText( MainActivity.this);
                 roomEdit.setText("Welcome");
                 new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("Room name")
-                        .setMessage("Please enter your room name.")
+                        .setTitle(R.string.room_name)
+                        .setMessage(R.string.enter_room_info)
                         .setView(roomEdit)
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 String roomName = roomEdit.getText().toString();
@@ -290,10 +290,10 @@ public class MainActivity extends AppCompatActivity implements FirebaseAuth.Auth
         final EditText nickEdit = new EditText(this);
         nickEdit.setText(displayName);
         new AlertDialog.Builder(this)
-                .setTitle("Nick name")
-                .setMessage("Please enter your nick name.")
+                .setTitle(R.string.nick_name)
+                .setMessage(R.string.nick_name_info)
                 .setView(nickEdit)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String nickname = nickEdit.getText().toString();
