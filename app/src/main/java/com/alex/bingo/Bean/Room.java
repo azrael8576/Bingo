@@ -1,4 +1,4 @@
-package com.alex.bingo;
+package com.alex.bingo.Bean;
 
 public class Room {
     public static final int STATUS_INIT = 0;

@@ -1,4 +1,4 @@
-package com.alex.bingo;
+package com.alex.bingo.Bean;
 
 public class Member {
     String uid;

@@ -1,14 +1,11 @@
-package com.alex.bingo;
+package com.alex.bingo.Activity;
 
-import android.app.Notification;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.constraint.Group;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,11 +17,13 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.alex.bingo.Bean.Member;
+import com.alex.bingo.R;
+import com.alex.bingo.Bean.Room;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -134,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements FirebaseAuth.Auth
         adapter = new FirebaseRecyclerAdapter<Room, RoomHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull RoomHolder holder, int position, @NonNull final Room room) {
-                holder.image.setImageResource(avatars[room.init.avatarId]);
+                holder.image.setImageResource(avatars[room.getInit().getAvatarId()]);
                 holder.text.setText(room.getTitle());
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
