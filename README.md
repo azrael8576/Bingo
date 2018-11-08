@@ -10,5 +10,11 @@ Bingo Party app _ launch Google Play
 
 ver 2.1
 
+2018/11/08
+
+Firebase Crashlytics
+
+ver.2.3
+
 
 Copyright HE,XUAN-WEI
