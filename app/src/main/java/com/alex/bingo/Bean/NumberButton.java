@@ -1,3 +1,4 @@
+
 package com.alex.bingo.Bean;
 
 import android.content.Context;

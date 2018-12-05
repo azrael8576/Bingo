@@ -46,12 +46,12 @@ public class BingoActivity extends AppCompatActivity {
     boolean myTurn = false;
 
 
-    ValueEventListener statusListener = new ValueEventListener(){
+    final ValueEventListener statusListener = new ValueEventListener() {
 
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
             long status = (long) dataSnapshot.getValue();
-            switch ((int) status){
+            switch ((int) status) {
                 case Room.STATUS_CREATED:
                     info.setText(getString(R.string.waiting_player));
                     break;
@@ -70,7 +70,7 @@ public class BingoActivity extends AppCompatActivity {
                     setMyTurn(!isCreator() ? true : false);
                     break;
                 case Room.STATUS_CREATOR_BINGO:
-                    if (!isCreator()){
+                    if (!isCreator()) {
                         new AlertDialog.Builder(BingoActivity.this)
                                 .setTitle(R.string.loser)
                                 .setMessage(R.string.you_lose)
@@ -84,7 +84,7 @@ public class BingoActivity extends AppCompatActivity {
                     }
                     break;
                 case Room.STATUS_JOINERS_BINGO:
-                    if (isCreator()){
+                    if (isCreator()) {
                         new AlertDialog.Builder(BingoActivity.this)
                                 .setTitle(R.string.loser)
                                 .setMessage(R.string.you_lose)
@@ -214,7 +214,7 @@ public class BingoActivity extends AppCompatActivity {
                             FirebaseDatabase.getInstance().getReference("rooms")
                                     .child(roomId)
                                     .child("status")
-                                    .setValue(isCreator() ? Room.STATUS_CREATOR_BINGO : Room.STATUS_JOINERS_BINGO);
+                                    .setValue(isCreator() ? Room.STATUS_CREATOR_TURN: Room.STATUS_JOINERS_TURN);
                             new AlertDialog.Builder(BingoActivity.this)
                                     .setTitle(R.string.bingo)
                                     .setMessage(R.string.bingo_info)
