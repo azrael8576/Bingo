@@ -2,15 +2,15 @@ package com.alex.bingo.Bean
 
 
 data class Room (
-    var id: String ?="",
-    var title: String ?="",
-    var init: Member ?=null,
-    var join: Member ?=null,
+    var id: String = "",
+    var title: String = "",
+    var init: Member? = null,
+    var join: Member? = null,
     var status: Int = 0)
 {
-    constructor(title:String?,init: Member?) : this() {
-        this.title=title
-        this.init=init
+    constructor(title: String,init: Member) : this() {
+        this.title = title
+        this.init = init
     }
 
     companion object {
