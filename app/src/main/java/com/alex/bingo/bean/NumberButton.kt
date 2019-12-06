@@ -1,4 +1,4 @@
-package com.alex.bingo.Bean
+package com.alex.bingo.bean
 
 import android.content.Context
 import android.util.AttributeSet

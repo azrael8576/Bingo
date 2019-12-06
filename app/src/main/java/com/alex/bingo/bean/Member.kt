@@ -1,4 +1,4 @@
-package com.alex.bingo.Bean
+package com.alex.bingo.bean
 
 data class Member (
     var uid: String = "",

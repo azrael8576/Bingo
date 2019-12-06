@@ -7,7 +7,7 @@
 
     <view
         android:id="@+id/number"
-        class="com.alex.bingo.Bean.NumberButton"
+        class="com.alex.bingo.bean.NumberButton"
         id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="0dp"

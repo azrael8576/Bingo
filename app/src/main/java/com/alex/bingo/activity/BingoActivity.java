@@ -1,4 +1,4 @@
-package com.alex.bingo.Activity;
+package com.alex.bingo.activity;
 
 import android.content.DialogInterface;
 import androidx.annotation.NonNull;
@@ -13,9 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.alex.bingo.Bean.NumberButton;
+import com.alex.bingo.bean.NumberButton;
 import com.alex.bingo.R;
-import com.alex.bingo.Bean.Room;
+import com.alex.bingo.bean.Room;
 import com.firebase.ui.common.ChangeEventType;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
